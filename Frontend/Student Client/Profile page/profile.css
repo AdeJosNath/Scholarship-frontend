@@ -1,0 +1,157 @@
+/* Header (Top Bar) */
+.top-bar {
+    background: #2c3e50;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid #3498db;
+}
+
+.top-bar h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-menu li {
+    display: inline;
+}
+
+.nav-menu li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+.nav-menu li a:hover {
+    background: #3498db;
+    color: white;
+}
+
+/* Profile Settings Section */
+.profile-settings-section {
+    padding: 20px;
+    background: #ecf0f1;
+    max-width: 800px;
+    margin: 20px auto;
+    border: 1px solid #bdc3c7;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.profile-settings-section h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+.profile-settings-section h3 {
+    font-size: 20px;
+    margin-top: 30px;
+    color: #34495e;
+}
+
+.profile-form .form-group {
+    margin-bottom: 15px;
+}
+
+.profile-form label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #2c3e50;
+}
+
+.profile-form input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #bdc3c7;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.profile-form input:focus {
+    border-color: #3498db;
+}
+
+.profile-form .form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.profile-form .btn-save {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.profile-form .btn-save:hover {
+    background: #2980b9;
+}
+
+.profile-form .btn-reset {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.profile-form .btn-reset:hover {
+    background: #c0392b;
+}
+
+/* Footer */
+.footer {
+    background: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 15px 20px;
+    margin-top: 20px;
+    border-top: 3px solid #3498db;
+}
+
+.footer p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.footer nav {
+    margin-top: 10px;
+}
+
+.footer nav a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-size: 14px;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.footer nav a:hover {
+    color: #3498db;
+}

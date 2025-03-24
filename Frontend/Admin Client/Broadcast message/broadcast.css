@@ -1,0 +1,149 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1, h2, h3 {
+    margin: 0;
+    color: #2c3e50;
+}
+
+p {
+    margin: 0;
+    color: #34495e;
+}
+
+/* Sidebar Navigation */
+.sidebar {
+    width: 250px;
+    background: #2c3e50;
+    color: white;
+    height: 100vh;
+    position: fixed;
+    padding: 5px;
+}
+
+.sidebar h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.sidebar-menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar-menu li {
+    margin: 15px 0;
+}
+
+.sidebar-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    display: block;
+    padding: 10px;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+.sidebar-menu a:hover
+{
+    background: #34495e;
+}
+
+/* Main Content */
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+}
+
+/* Header (Top Bar) */
+.top-bar {
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #3498db;
+}
+
+.top-bar h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.profile-settings{
+    color: white;
+    
+} 
+
+/* Broadcast Message Section */
+.broadcast-section label {
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+}
+
+.broadcast-section select,
+.broadcast-section input,
+.broadcast-section textarea {
+    width: 90%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.broadcast-section button {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background 0.3s;
+    margin-top: 15px;
+}
+
+.broadcast-section button:hover {
+    background: #2980b9;
+}
+
+
+/* Footer */
+.footer {
+    background: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 15px 20px;
+    margin-top: 20px;
+    border-top: 3px solid #3498db;
+}
+
+.footer p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.footer nav {
+    margin-top: 10px;
+}
+
+.footer nav a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-size: 14px;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.footer nav a:hover {
+    color: #3498db;
+}

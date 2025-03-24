@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scholarship Search-page</title>
+    <link rel="stylesheet" href="/Frontend/Student Client/Scholarship Search page/search.css">
+</head>
+<body>
+    <div class="search-page">
+        <!-- Header -->
+        <header class="top-bar">
+            <h1>Search Scholarships</h1>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="/Homepage/homepage.html">Home</a></li>
+                    <li><a href="#filter-section">Filters</a></li>
+                    <li><a href="#results-section">Results</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Filter Section -->
+        <section class="filter-section" id="filter-section">
+            <h2>Filter Scholarships</h2>
+            <form id="filter-form">
+                <label for="keyword">Keyword:</label>
+                <input type="text" id="keyword" name="keyword" placeholder="e.g., Engineering, Science">
+
+                <label for="category">Category:</label>
+                <select id="category" name="category">
+                    <option value="">All</option>
+                    <option value="engineering">Engineering</option>
+                    <option value="science">Science</option>
+                    <option value="arts">Arts</option>
+                    <option value="business">Business</option>
+                </select>
+
+                <label for="deadline">Deadline:</label>
+                <input type="date" id="deadline" name="deadline">
+                <button type="submit" class="filter-button">Search</button>
+            </form>
+        </section>
+
+        <!-- Results Section -->
+        <section class="results-section" id="results-section">
+            <h2>Scholarship Results</h2>
+            <div class="results-list">
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2025 Scholarship Dashboard. All rights reserved.</p>
+            <nav>
+                <a href="#terms">Terms of Use</a> |
+                <a href="#privacy">Privacy Policy</a>
+            </nav>
+        </footer>
+    </div>
+
+    <script src="/Frontend/Student Client/Scholarship Search page/search.js"></script>
+</body>
+</html>

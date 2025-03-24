@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage-scholarships</title>
+    <link rel="stylesheet" href="/Frontend/Admin Client/manage scholarship page/manage.css">
+</head>
+<body>
+    <div class="manage-scholarships">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h2>Admin Dashboard</h2>
+            <nav class="sidebar-menu">
+                <ul>
+                    <li><a href="admin-dashboard.html">Home</a></li>
+                    <li><a href="manage-scholarships.html">Manage Scholarships</a></li>
+                    <li><a href="review-applications.html">Review Applications</a></li>
+                    <li><a href="notifications.html">Notifications</a></li>
+                    <li><a href="generate-reports.html">Generate Reports</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="top-bar">
+                <h1>Manage Scholarships</h1>
+                <div class="profile-settings">
+                    <a href="profile-settings.html">Profile Settings</a>
+                    <a href="logout.html">Logout</a>
+                </div>
+            </header>
+
+            <!-- Scholarship Management Section -->
+            <section class="scholarship-management">
+                <div class="actions-bar">
+                    <button class="btn-primary" id="add-scholarship-btn">Add New Scholarship</button>
+                    <input type="text" class="search-bar" id="search-scholarships" placeholder="Search Scholarships...">
+                </div>
+
+                <!-- Scholarship Table -->
+                <table class="scholarship-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Title</th>
+                            <th>Deadline</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="scholarship-table-body">
+                        <!-- Placeholder Data -->
+                        <tr>
+                            <td>1</td>
+                            <td>Undergraduate Merit Scholarship</td>
+                            <td>2025-01-31</td>
+                            <td>Active</td>
+                            <td>
+                                <button class="btn-secondary">Edit</button>
+                                <button class="btn-danger">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Postgraduate Research Fellowship</td>
+                            <td>2025-02-15</td>
+                            <td>Active</td>
+                            <td>
+                                <button class="btn-secondary">Edit</button>
+                                <button class="btn-danger">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+
+    <script src="/Frontend/Admin Client/manage scholarship page/manage.js"></script>
+</body>
+</html>

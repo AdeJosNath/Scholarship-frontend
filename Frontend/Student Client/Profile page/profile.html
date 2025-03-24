@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="/Frontend/Student Client/Profile page/profile.css">
+</head>
+<body>
+    <div class="profile-settings-page">
+        <!-- Header -->
+        <header class="top-bar">
+            <h1>Profile Settings</h1>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="/Homepage/homepage.html">Home</a></li>
+                    <li><a href="/Scholarship Search page/search.html">Search Scholarships</a></li>
+                    <li><a href="/Application Page/Application.html">Applications</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Profile Settings Section -->
+        <section class="profile-settings-section">
+            <h2>Update Your Profile</h2>
+            <form class="profile-form">
+                <!-- Personal Information -->
+                <div class="form-group">
+                    <label for="full-name">Full Name:</label>
+                    <input type="text" id="full-name" name="full-name" placeholder="Enter your full name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+                </div>
+
+                <!-- Password Update -->
+                <h3>Update Password</h3>
+                <div class="form-group">
+                    <label for="current-password">Current Password:</label>
+                    <input type="password" id="current-password" name="current-password" placeholder="Enter current password">
+                </div>
+
+                <div class="form-group">
+                    <label for="new-password">New Password:</label>
+                    <input type="password" id="new-password" name="new-password" placeholder="Enter new password">
+                </div>
+
+                <div class="form-group">
+                    <label for="confirm-password">Confirm New Password:</label>
+                    <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm new password">
+                </div>
+
+                <!-- Profile Actions -->
+                <div class="form-actions">
+                    <button type="submit" class="btn-save">Save Changes</button>
+                    <button type="reset" class="btn-reset">Reset</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2025 Scholarship Dashboard. All rights reserved.</p>
+            <nav>
+                <a href="#terms">Terms of Use</a> |
+                <a href="#privacy">Privacy Policy</a>
+            </nav>
+        </footer>
+    </div>
+    <script src="/Frontend/Student Client/Profile page/profile.js"></script>
+</body>
+</html>
