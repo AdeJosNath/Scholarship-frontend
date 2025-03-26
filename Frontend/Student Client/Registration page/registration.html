@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+
+    <link rel="stylesheet" href="/Frontend/Student Client/Registration page/registration.css">
+</head>
+<body>
+    <header class="top-bar">
+            <h1>Registration Form</h1>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="/Frontend/Student Client/Dashboard page/index.html">Dashboard</a></li>
+                </ul>
+            </nav>
+        </header>
+    <div class="registration-form">
+        <div class="registration-container">
+            <form id="registrationForm">    
+                <div class="file-upload">
+                    <label for="passport" class="upload-btn">Choose File</label>
+                    <input type="file" id="passport" name="passport" accept=".jpg,.png" required>
+                    <span id="file-chosen">No file chosen</span>
+                </div>
+    
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+    
+                <div class="form-group">
+                    <label for="dob">Date of Birth</label>
+                    <input type="date" id="dob" name="dob" required>
+                </div>
+    
+                <div class="form-group">
+                    <label for="placeOfBirth">Place of Birth</label>
+                    <input type="text" id="placeOfBirth" name="placeOfBirth" required>
+                </div>
+    
+                <div class="form-group">
+                    <label>Gender*</label>
+                    <div class="gender-group">
+                        <label>
+                            <input type="radio" name="gender" value="male" required> Male
+                        </label>
+                        <label>
+                            <input type="radio" name="gender" value="female" required> Female
+                        </label>
+                    </div>
+                </div>
+    
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+    
+                <div class="form-group">
+                    <label for="phone">Phone Mobile</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+    
+                <div class="form-group">
+                    <label for="address">Home Address</label>
+                    <input type="text" id="address" name="address" required>
+                </div>
+
+                <form id="extendedRegistrationForm">
+                    <div class="form-section">
+                        <h3>Location Information</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="localGovArea">Local Government Area</label>
+                                <input type="text" id="localGovArea" name="localGovArea" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="city">City</label>
+                                <input type="text" id="city" name="city" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="city">State</label>
+                                <input type="text" id="city" name="city" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="religion">Religion*</label>
+                                <select id="religion" name="religion" required>
+                                    <option value="">- Select -</option>
+                                    <option value="religion1">Christianity</option>
+                                    <option value="religion2">Islam</option>
+                                    <option value="religion2">Others</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="denomination">Denomination*</label>
+                                <input type="text" id="denomination" name="denomination" required>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="form-section">
+                        <h3>Next of Kin Information</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="nextOfKinName">Name of Next of Kin*</label>
+                                <input type="text" id="nextOfKinName" name="nextOfKinName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="relationship">Relationship*</label>
+                                <select id="relationship" name="relationship" required>
+                                    <option value="">- Select -</option>
+                                    <option value="parent">Parent</option>
+                                    <option value="spouse">Spouse</option>
+                                    <option value="sibling">Sibling</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="primaryPhone">Primary Phone Number*</label>
+                                <input type="tel" id="primaryPhone" name="primaryPhone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="alternatePhone">Alternate Phone Number</label>
+                                <input type="tel" id="alternatePhone" name="alternatePhone">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="primaryEmail">Primary Email*</label>
+                                <input type="email" id="primaryEmail" name="primaryEmail" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="alternateEmail">Alternate Email</label>
+                                <input type="email" id="alternateEmail" name="alternateEmail">
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="form-section">
+                        <h3>Academic Information</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="schoolName">Name of School*</label>
+                                <select id="schoolName" name="schoolName" required>
+                                    <option value="">- Select -</option>
+                                    <option value="school1">School 1</option>
+                                    <option value="school2">School 2</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="course">Course*</label>
+                                <select id="course" name="course" required>
+                                    <option value="">- Select -</option>
+                                    <option value="course1">Course 1</option>
+                                    <option value="course2">Course 2</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <button type="submit" class="submit-btn">Submit Registration</button>
+                </form>
+                </div>
+                </div>
+            </form>        
+            <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2025 Scholarship Dashboard. All rights reserved.</p>
+            <nav>
+                <a href="#terms">Terms of Use</a> |
+                <a href="#privacy">Privacy Policy</a>
+            </nav>
+        </footer>
+    </div>
+    <script src="/Frontend/Student Client/Registration page/registration.js"></script>
+</body>
+</html>
