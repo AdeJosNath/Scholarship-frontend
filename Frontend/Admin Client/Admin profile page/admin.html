@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Settings</title>
+    <link rel="stylesheet" href="/Frontend/Admin Client/Admin profile page/admin.css">
+</head>
+<body>
+    <aside class="sidebar">
+        <h2>Admin Dashboard</h2>
+        <nav class="sidebar-menu">
+            <ul>
+                <li><a href="/Frontend/Admin Client/Dashboard page/index.html">Dashboard</a></li>
+                <li><a href="/Frontend/Admin Client/manage scholarship page/manage.html">Manage Scholarships</a></li>
+                <li><a href="/Frontend/Admin Client/Review application page/review.html">Review Applications</a></li>
+                <li><a href="/Frontend/Admin Client/notification page/notification.html">Notifications</a></li>
+                <li><a href="/Frontend/Admin Client/Generate report/generate.html">Generate Reports</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <div class="main-content">
+        <div class="profile-header">
+            <h1>Profile Settings</h1>
+            <button class="btn">Profile Settings</button>
+        </div>
+
+        <div class="profile-settings-form">
+            <div class="profile-image-section">
+                <div class="profile-image">
+                    <img src="/api/placeholder/100/100" alt="Profile Picture">
+                </div>
+                <button class="btn upload-btn">Change Photo</button>
+            </div>
+
+            <form id="adminProfileForm">
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" name="fullName" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="role">Admin Role</label>
+                    <select id="role" name="role">
+                        <option value="super_admin">Super Administrator</option>
+                        <option value="scholarship_manager">Scholarship Manager</option>
+                        <option value="application_reviewer">Application Reviewer</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="department">Department</label>
+                    <input type="text" id="department" name="department">
+                </div>
+
+                <div class="form-group">
+                    <label for="contact">Contact Number</label>
+                    <input type="tel" id="contact" name="contact">
+                </div>
+
+                <div class="form-group">
+                    <label>Change Password</label>
+                    <input type="password" id="currentPassword" name="currentPassword" placeholder="Current Password">
+                    <input type="password" id="newPassword" name="newPassword" placeholder="New Password" style="margin-top: 10px;">
+                    <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm New Password" style="margin-top: 10px;">
+                </div>
+
+                <button type="submit" class="btn">Save Changes</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="/Frontend/Admin Client/Admin profile page/admin.js"></script>
+</body>
+</html>

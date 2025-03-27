@@ -50,8 +50,8 @@ p {
     transition: background 0.3s;
 }
 
-.sidebar-menu a:hover
-{
+.sidebar-menu a:hover,
+.sidebar-menu a.active {
     background: #34495e;
 }
 
@@ -63,11 +63,10 @@ p {
 
 /* Header (Top Bar) */
 .top-bar {
-    color: white;
-    padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 20px;
     border-bottom: 1px solid #3498db;
 }
 
@@ -77,10 +76,15 @@ p {
     font-weight: bold;
 }
 
-.profile-settings{
-    color: white;
-    
-} 
+.profile-settings a {
+    text-decoration: none;
+    color: #3498db;
+    margin-left: 15px;
+}
+
+.profile-settings a:hover {
+    text-decoration: underline;
+}
 
 /* Broadcast Message Section */
 .broadcast-section label {
