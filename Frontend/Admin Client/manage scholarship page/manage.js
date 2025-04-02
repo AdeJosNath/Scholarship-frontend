@@ -1,3 +1,4 @@
+// Modify your existing manage.js
 document.addEventListener("DOMContentLoaded", () => {
     const addScholarshipBtn = document.getElementById("add-scholarship-btn");
     const searchInput = document.getElementById("search-scholarships");

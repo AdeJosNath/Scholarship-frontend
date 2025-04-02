@@ -11,7 +11,13 @@ app.use(express.json());
 
 // Routes
 const scholarshipRoutes = require('./routes/scholarshipRoutes');
+const notificationRoutes = require('./routes/notificationRoutes');
+const applicationRoutes = require('./routes/applicationRoutes');
+
 app.use('/api/scholarships', scholarshipRoutes);
+app.use('/api/notifications', notificationRoutes);
+app.use('/api/applications', applicationRoutes);
+
 
 // Error handling middleware
 app.use((err, req, res, next) => {
@@ -21,5 +27,5 @@ app.use((err, req, res, next) => {
 
 // Start server
 app.listen(PORT, () => {
-    console.log('Server running on port http://localhost:${PORT}');
+    console.log('Server running on port ${PORT}');
 });

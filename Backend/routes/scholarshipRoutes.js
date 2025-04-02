@@ -7,7 +7,7 @@ const {
     deleteScholarship,
     searchScholarships
 } = require('../controllers/scholarshipController');
-const { authenticateAdmin } = require('../middleware/authmiddleware');
+const { authenticateAdmin } = require('../middleware/authMiddleware');
 
 // GET all scholarships
 router.get('/', authenticateAdmin, getAllScholarships);
