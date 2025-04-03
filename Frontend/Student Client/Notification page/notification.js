@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
             timestamp: "5 hours ago",
         },
         {
-            message: "Reminder: Submit required documents for Theatre Arts Scholarship by January 15, 2025.",
+            message: "Reminder: Submit required documents for Computer Science Scholarship by January 15, 2025.",
             timestamp: "2 days ago",
         },
     ];

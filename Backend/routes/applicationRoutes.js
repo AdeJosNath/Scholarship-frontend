@@ -1,27 +1,18 @@
-// routes/applicationRoutes.js
 const express = require('express');
-const router = express.Router();
 const { 
+    createApplication, 
     getAllApplications, 
-    getApplicationById,
-    updateApplicationStatus,
-    searchApplications
+    getApplicationById, 
+    updateApplication, 
+    deleteApplication 
 } = require('../controllers/applicationController');
-const { authenticateAdmin } = require('../middleware/authMiddleware');
 
-// Apply authentication middleware to all routes
-router.use(authenticateAdmin);
+const router = express.Router();
 
-// GET all applications
+router.post('/', createApplication);
 router.get('/', getAllApplications);
-
-// GET single application by ID
 router.get('/:id', getApplicationById);
-
-// SEARCH applications
-router.get('/search', searchApplications);
-
-// UPDATE application status
-router.patch('/:id/status', updateApplicationStatus);
+router.put('/:id', updateApplication);
+router.delete('/:id', deleteApplication);
 
 module.exports = router;

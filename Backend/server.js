@@ -2,30 +2,28 @@ const express = require('express');
 const cors = require('cors');
 require('dotenv').config();
 
-const app = express();
-const PORT = process.env.PORT || 3000
-
-// Middleware
-app.use(cors());
-app.use(express.json());
-
-// Routes
+const authRoutes = require('./routes/authRoutes');
 const scholarshipRoutes = require('./routes/scholarshipRoutes');
-const notificationRoutes = require('./routes/notificationRoutes');
 const applicationRoutes = require('./routes/applicationRoutes');
+const notificationRoutes = require('./routes/notificationRoutes');
+const app = express();
+const PORT = process.env.PORT || 5000;
 
+app.use(express.json());
+app.use(cors());
+
+// API Routes
+app.use('/api/auth', authRoutes);
 app.use('/api/scholarships', scholarshipRoutes);
-app.use('/api/notifications', notificationRoutes);
 app.use('/api/applications', applicationRoutes);
+app.use('/api/notifications', notificationRoutes); 
 
+app.get('/', (req,res) =>{
+    res.send('hello')
+})
 
-// Error handling middleware
-app.use((err, req, res, next) => {
-    console.error(err.stack);
-    res.status(500).send('Something broke!');
-});
+app.get('/')
 
-// Start server
 app.listen(PORT, () => {
-    console.log('Server running on port ${PORT}');
+    console.log(`Server running on http://localhost:${PORT}`);
 });

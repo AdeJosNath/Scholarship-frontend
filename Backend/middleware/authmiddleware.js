@@ -1,4 +1,4 @@
-const supabase = require('../config/supabaseClient');
+/* const supabase = require('../config/supabaseClient');
 
 const authenticateAdmin = async (req, res, next) => {
     const token = req.headers.authorization?.split(' ')[1];
@@ -33,4 +33,29 @@ const authenticateAdmin = async (req, res, next) => {
     }
 };
 
-module.exports = { authenticateAdmin };
+module.exports = { authenticateAdmin }; */
+
+const supabase = require('../config/supabaseClient');
+
+const authMiddleware = async (req, res, next) => {
+    const { user_id } = req.body;
+
+    try {
+        const { data: user, error } = await supabase
+            .from('users')
+            .select('*')
+            .eq('id', user_id)
+            .single();
+
+        if (!user) {
+            return res.status(403).json({ message: 'Unauthorized' });
+        }
+
+        req.user = user;
+        next();
+    } catch (error) {
+        res.status(500).json({ message: 'Authentication error' });
+    }
+};
+
+module.exports = authMiddleware;

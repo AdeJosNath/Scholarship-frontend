@@ -1,78 +1,50 @@
-// controllers/notificationController.js
-const supabase = require('../config/supabaseClient');
-
-exports.getAllNotifications = async (req, res) => {
-    try {
-        const { data, error } = await supabase
-            .from('notifications')
-            .select('*')
-            .eq('user_id', req.user.id)
-            .order('created_at', { ascending: false });
-        
-        if (error) throw error;
-        
-        res.json(data);
-    } catch (err) {
-        res.status(500).json({ error: err.message });
-    }
-};
-
-exports.markAsRead = async (req, res) => {
-    try {
-        const { id } = req.params;
-        
-        const { data, error } = await supabase
-            .from('notifications')
-            .update({ read: true })
-            .eq('id', id)
-            .eq('user_id', req.user.id)
-            .select();
-        
-        if (error) throw error;
-        
-        res.json(data[0]);
-    } catch (err) {
-        res.status(500).json({ error: err.message });
-    }
-};
-
-exports.markAllAsRead = async (req, res) => {
-    try {
-        const { data, error } = await supabase
-            .from('notifications')
-            .update({ read: true })
-            .eq('user_id', req.user.id)
-            .eq('read', false)
-            .select();
-        
-        if (error) throw error;
-        
-        res.json(data);
-    } catch (err) {
-        res.status(500).json({ error: err.message });
-    }
-};
+const Notification = require('../models/notificationModel');
 
 exports.createNotification = async (req, res) => {
     try {
-        const { message, user_id } = req.body;
-        
-        const { data, error } = await supabase
-            .from('notifications')
-            .insert([
-                { 
-                    message,
-                    user_id,
-                    read: false,
-                    created_at: new Date().toISOString()
-                }
-            ])
-            .select();
-        
-        if (error) throw error;
-        
-        res.status(201).json(data[0]);
-    } catch (err) {
-        res.status(500).json({ error: err.message });
+        const { user_id, message, type } = req.body;
+        const notification = await Notification.createNotification(user_id, message, type);
+        res.status(201).json({ message: 'Notification sent successfully', notification });
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+};
+
+exports.getAllNotifications = async (req, res) => {
+    try {
+        const notifications = await Notification.getAllNotifications();
+        res.status(200).json(notifications);
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+};
+
+exports.getUserNotifications = async (req, res) => {
+    try {
+        const { user_id } = req.params;
+        const notifications = await Notification.getUserNotifications(user_id);
+        res.status(200).json(notifications);
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+};
+
+exports.markNotificationAsRead = async (req, res) => {
+    try {
+        const { id } = req.params;
+        await Notification.markNotificationAsRead(id);
+        res.status(200).json({ message: 'Notification marked as read' });
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+};
+
+exports.deleteNotification = async (req, res) => {
+    try {
+        const { id } = req.params;
+        await Notification.deleteNotification(id);
+        res.status(200).json({ message: 'Notification deleted successfully' });
+    } catch (error) {
+        res.status(500).json({ message: error.message });
     }
 };
