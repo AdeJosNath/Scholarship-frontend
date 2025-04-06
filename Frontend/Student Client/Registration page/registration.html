@@ -67,117 +67,390 @@
                     <input type="text" id="address" name="address" required>
                 </div>
 
-                <form id="extendedRegistrationForm">
-                    <div class="form-section">
-                        <h3>Location Information</h3>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="localGovArea">Local Government Area</label>
-                                <input type="text" id="localGovArea" name="localGovArea" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="city">City</label>
-                                <input type="text" id="city" name="city" required>
-                            </div>
+                <div class="form-section">
+                    <h3>Location Information</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="localGovArea">Local Government Area</label>
+                            <input type="text" id="localGovArea" name="localGovArea" required>
                         </div>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="city">State</label>
-                                <input type="text" id="city" name="city" required>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="religion">Religion*</label>
-                                <select id="religion" name="religion" required>
-                                    <option value="">- Select -</option>
-                                    <option value="religion1">Christianity</option>
-                                    <option value="religion2">Islam</option>
-                                    <option value="religion2">Others</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="denomination">Denomination*</label>
-                                <input type="text" id="denomination" name="denomination" required>
-                            </div>
+                        <div class="form-group">
+                            <label for="city">City</label>
+                            <input type="text" id="city" name="city" required>
                         </div>
                     </div>
-        
-                    <div class="form-section">
-                        <h3>Next of Kin Information</h3>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="nextOfKinName">Name of Next of Kin*</label>
-                                <input type="text" id="nextOfKinName" name="nextOfKinName" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="relationship">Relationship*</label>
-                                <select id="relationship" name="relationship" required>
-                                    <option value="">- Select -</option>
-                                    <option value="parent">Parent</option>
-                                    <option value="spouse">Spouse</option>
-                                    <option value="sibling">Sibling</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="primaryPhone">Primary Phone Number*</label>
-                                <input type="tel" id="primaryPhone" name="primaryPhone" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="alternatePhone">Alternate Phone Number</label>
-                                <input type="tel" id="alternatePhone" name="alternatePhone">
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="primaryEmail">Primary Email*</label>
-                                <input type="email" id="primaryEmail" name="primaryEmail" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="alternateEmail">Alternate Email</label>
-                                <input type="email" id="alternateEmail" name="alternateEmail">
-                            </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="state">State</label>
+                            <input type="text" id="state" name="state" required>
                         </div>
                     </div>
-        
-                    <div class="form-section">
-                        <h3>Academic Information</h3>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="schoolName">Name of School*</label>
-                                <select id="schoolName" name="schoolName" required>
-                                    <option value="">- Select -</option>
-                                    <option value="school1">School 1</option>
-                                    <option value="school2">School 2</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="course">Course*</label>
-                                <select id="course" name="course" required>
-                                    <option value="">- Select -</option>
-                                    <option value="course1">Course 1</option>
-                                    <option value="course2">Course 2</option>
-                                </select>
-                            </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="religion">Religion*</label>
+                            <select id="religion" name="religion" required>
+                                <option value="">- Select -</option>
+                                <option value="religion1">Christianity</option>
+                                <option value="religion2">Islam</option>
+                                <option value="religion2">Others</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="denomination">Denomination*</label>
+                            <input type="text" id="denomination" name="denomination" required>
                         </div>
                     </div>
-        
-                    <button type="submit" class="submit-btn">Submit Registration</button>
-                </form>
                 </div>
+    
+                <div class="form-section">
+                    <h3>Next of Kin Information</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nextOfKinName">Name of Next of Kin*</label>
+                            <input type="text" id="nextOfKinName" name="nextOfKinName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="relationship">Relationship*</label>
+                            <select id="relationship" name="relationship" required>
+                                <option value="">- Select -</option>
+                                <option value="parent">Parent</option>
+                                <option value="spouse">Spouse</option>
+                                <option value="sibling">Sibling</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="primaryPhone">Primary Phone Number*</label>
+                            <input type="tel" id="primaryPhone" name="primaryPhone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="alternatePhone">Alternate Phone Number</label>
+                            <input type="tel" id="alternatePhone" name="alternatePhone">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="primaryEmail">Primary Email*</label>
+                            <input type="email" id="primaryEmail" name="primaryEmail" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="alternateEmail">Alternate Email</label>
+                            <input type="email" id="alternateEmail" name="alternateEmail">
+                        </div>
+                    </div>
                 </div>
-            </form>        
-            <!-- Footer -->
-        <footer class="footer">
-            <p>&copy; 2025 Scholarship Dashboard. All rights reserved.</p>
-            <nav>
-                <a href="#terms">Terms of Use</a> |
-                <a href="#privacy">Privacy Policy</a>
-            </nav>
-        </footer>
+    
+                <!-- New Section: Educational Background -->
+                <div class="form-section">
+                    <h3>School Attended With Date</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="schoolName">Name of School*</label>
+                            <input type="text" id="schoolName" name="schoolName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="schoolFrom">From*</label>
+                            <input type="text" id="schoolFrom" name="schoolFrom" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="schoolTo">To*</label>
+                            <input type="text" id="schoolTo" name="schoolTo" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="qualification">Qualification*</label>
+                            <input type="text" id="qualification" name="qualification" required>
+                        </div>
+                    </div>
+                    <button type="button" id="addSchool" class="add-btn">Add</button>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="examName">Exam Name*</label>
+                            <select id="examName" name="examName" required>
+                                <option value="">--Select--</option>
+                                <option value="waec">WAEC</option>
+                                <option value="neco">NECO</option>
+                                <option value="gce">GCE</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="examDate">Exam Date*</label>
+                            <input type="text" id="examDate" name="examDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="examNumber">Exam Number*</label>
+                            <input type="text" id="examNumber" name="examNumber" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="document">Document*</label>
+                            <input type="file" id="document" name="document" class="file-input" required>
+                            <div class="file-note">Please upload a pdf file only.</div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="examName2">Exam Name (if you have two sittings)</label>
+                            <select id="examName2" name="examName2">
+                                <option value="">--Select--</option>
+                                <option value="waec">WAEC</option>
+                                <option value="neco">NECO</option>
+                                <option value="gce">GCE</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="examDate2">Exam Date*</label>
+                            <input type="text" id="examDate2" name="examDate2">
+                        </div>
+                        <div class="form-group">
+                            <label for="examNumber2">Exam Number*</label>
+                            <input type="text" id="examNumber2" name="examNumber2">
+                        </div>
+                        <div class="form-group">
+                            <label for="document2">Document*</label>
+                            <input type="file" id="document2" name="document2" class="file-input">
+                            <div class="file-note">Please upload a pdf file only.</div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="jambRegNumber">Jamb Registration Number</label>
+                            <input type="text" id="jambRegNumber" name="jambRegNumber">
+                        </div>
+                        <div class="form-group">
+                            <label for="jambExamNumber">Jamb Examination Number</label>
+                            <input type="text" id="jambExamNumber" name="jambExamNumber">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Have you ever received academic honours or awards for scholastic achievement in secondary and/or primary school?*</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="academicHonours" value="yes"> Yes</label>
+                            <label><input type="radio" name="academicHonours" value="no"> No</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group" id="awardsSection" style="display: none;">
+                        <label for="awards">If yes list award(s)</label>
+                        <input type="text" id="awards" name="awards">
+                    </div>
+                </div>
+                
+                <!-- New Section: Family Background -->
+                <div class="form-section">
+                    <h3>Family Background</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fatherName">Father/Guardian</label>
+                            <input type="text" id="fatherName" name="fatherName">
+                        </div>
+                        <div class="form-group">
+                            <label for="fatherAge">Age (if alive)</label>
+                            <input type="text" id="fatherAge" name="fatherAge">
+                        </div>
+                        <div class="form-group">
+                            <label for="fatherPhone">Phone Number</label>
+                            <input type="tel" id="fatherPhone" name="fatherPhone">
+                        </div>
+                        <div class="form-group">
+                            <label for="fatherProfession">Profession</label>
+                            <input type="text" id="fatherProfession" name="fatherProfession">
+                        </div>
+                        <div class="form-group">
+                            <label for="fatherDeathDate">Date (If dead)</label>
+                            <input type="text" id="fatherDeathDate" name="fatherDeathDate">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="motherName">Mother/Guardian</label>
+                            <input type="text" id="motherName" name="motherName">
+                        </div>
+                        <div class="form-group">
+                            <label for="motherAge">Age (if alive)</label>
+                            <input type="text" id="motherAge" name="motherAge">
+                        </div>
+                        <div class="form-group">
+                            <label for="motherPhone">Phone Number</label>
+                            <input type="tel" id="motherPhone" name="motherPhone">
+                        </div>
+                        <div class="form-group">
+                            <label for="motherProfession">Profession</label>
+                            <input type="text" id="motherProfession" name="motherProfession">
+                        </div>
+                        <div class="form-group">
+                            <label for="motherDeathDate">Date (If dead)</label>
+                            <input type="text" id="motherDeathDate" name="motherDeathDate">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- New Section: Psychosocial Status -->
+                <div class="form-section">
+                    <h3>Psychosocial Status</h3>
+                    <div class="form-group">
+                        <label>Have you ever used or been addicted to hard drugs?*</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="drugUse" value="yes"> Yes</label>
+                            <label><input type="radio" name="drugUse" value="no"> No</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row drug-questions" style="display: none;">
+                        <div class="form-group">
+                            <label for="drugUseTime">If yes, for how long?</label>
+                            <input type="text" id="drugUseTime" name="drugUseTime">
+                        </div>
+                        <div class="form-group">
+                            <label for="drugTherapy">What therapies helped your healing process?</label>
+                            <input type="text" id="drugTherapy" name="drugTherapy">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Have you ever been a member of any secret or oath taking group or cult?*</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="cultMembership" value="yes"> Yes</label>
+                            <label><input type="radio" name="cultMembership" value="no"> No</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row cult-questions" style="display: none;">
+                        <div class="form-group">
+                            <label for="cultWhen">If yes, when?</label>
+                            <input type="text" id="cultWhen" name="cultWhen">
+                        </div>
+                        <div class="form-group">
+                            <label for="cultPeriod">If yes, state period?</label>
+                            <input type="text" id="cultPeriod" name="cultPeriod">
+                        </div>
+                        <div class="form-group">
+                            <label>Have you renounced your membership?*</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="cultRenounce" value="yes"> Yes</label>
+                                <label><input type="radio" name="cultRenounce" value="no"> No</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="cultTherapy">What therapies helped your rehabilitation?</label>
+                            <input type="text" id="cultTherapy" name="cultTherapy">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- New Section: Health Information -->
+                <div class="form-section">
+                    <h3>Health Information</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Do you have any health problem/allergies?*</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="healthIssues" value="yes"> Yes</label>
+                                <label><input type="radio" name="healthIssues" value="no"> No</label>
+                            </div>
+                        </div>
+                        <div class="form-group health-description" style="display: none;">
+                            <label for="healthDescription">If yes, give a brief description?</label>
+                            <input type="text" id="healthDescription" name="healthDescription">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Do you have any unhealthy or social problem?*</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="socialIssues" value="yes"> Yes</label>
+                                <label><input type="radio" name="socialIssues" value="no"> No</label>
+                            </div>
+                        </div>
+                        <div class="form-group social-description" style="display: none;">
+                            <label for="socialDescription">If yes, give a brief description?</label>
+                            <input type="text" id="socialDescription" name="socialDescription">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- New Section: Scholarship Information -->
+                <div class="form-section">
+                    <h3>Information about Springtime Development Foundation Scholarship Scheme</h3>
+                    <div class="form-group">
+                        <label for="scholarshipReferral">How did you come to know about Springtime Development Foundation Scholarship Scheme?*</label>
+                        <select id="scholarshipReferral" name="scholarshipReferral" required>
+                            <option value="">--Select--</option>
+                            <option value="friend">Friend</option>
+                            <option value="family">Family Member</option>
+                            <option value="internet">Internet</option>
+                            <option value="school">School</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Is this scholarship or award the only means by which you can pursue your education?*</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="onlyMeans" value="yes"> Yes</label>
+                            <label><input type="radio" name="onlyMeans" value="no"> No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- New Section: Application Letter -->
+                <div class="form-section">
+                    <h3>Application Letter</h3>
+                    <div class="form-group">
+                        <label for="applicationLetter">Type your application letter (At least 100 characters)</label>
+                        <textarea id="applicationLetter" name="applicationLetter" rows="6" required></textarea>
+                    </div>
+                </div>
+                
+                <!-- New Section: Other Files Upload -->
+                <div class="form-section">
+                    <h3>Other Files Upload</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="birthCertificate">Birth Certificate</label>
+                            <input type="file" id="birthCertificate" name="birthCertificate" class="file-input">
+                        </div>
+                        <div class="form-group">
+                            <label for="jambResult">Jamb Result</label>
+                            <input type="file" id="jambResult" name="jambResult" class="file-input">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="admissionLetter">Admission Letter</label>
+                            <input type="file" id="admissionLetter" name="admissionLetter" class="file-input">
+                        </div>
+                        <div class="form-group">
+                            <label for="stateOrigin">State of Origin</label>
+                            <input type="file" id="stateOrigin" name="stateOrigin" class="file-input">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="otherFile">Other file</label>
+                            <input type="file" id="otherFile" name="otherFile" class="file-input">
+                        </div>
+                    </div>
+                </div>
+    
+                <button type="submit" class="submit-btn">Submit Registration</button>
+            </form>
+        </div>
     </div>
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Scholarship Dashboard. All rights reserved.</p>
+        <nav>
+            <a href="#terms">Terms of Use</a> |
+            <a href="#privacy">Privacy Policy</a>
+        </nav>
+    </footer>
+    
     <script src="/Frontend/Student Client/Registration page/registration.js"></script>
 </body>
 </html>

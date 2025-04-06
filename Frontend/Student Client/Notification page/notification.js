@@ -1,27 +1,20 @@
-document.addEventListener("DOMContentLoaded", () => {
-    // Example: Dynamically add notifications (can be replaced with API calls later)
+document.addEventListener("DOMContentLoaded", async () => {
     const notificationsList = document.querySelector(".notifications-list");
 
-    // Mock data for notifications
-    const notifications = [
-        {
-            message: "Your application for Library Information Studies has been rejected.",
-            timestamp: "5 hours ago",
-        },
-        {
-            message: "Reminder: Submit required documents for Computer Science Scholarship by January 15, 2025.",
-            timestamp: "2 days ago",
-        },
-    ];
+    try {
+        const response = await fetch("http://localhost:5000/api/notifications");
+        const notifications = await response.json();
 
-    // Add notifications dynamically
-    notifications.forEach(notification => {
-        const notificationCard = document.createElement("div");
-        notificationCard.classList.add("notification-card");
-        notificationCard.innerHTML = `
-            <p><strong>${notification.message}</strong></p>
-            <span class="timestamp">${notification.timestamp}</span>
-        `;
-        notificationsList.appendChild(notificationCard);
-    });
+        notifications.forEach(notification => {
+            const notificationCard = document.createElement("div");
+            notificationCard.classList.add("notification-card");
+            notificationCard.innerHTML = `
+                <p><strong>${notification.message}</strong></p>
+                <span class="timestamp">${notification.timestamp}</span>
+            `;
+            notificationsList.appendChild(notificationCard);
+        });
+    } catch (error) {
+        console.error("Error fetching notifications:", error);
+    }
 });
