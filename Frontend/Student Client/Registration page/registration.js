@@ -1,116 +1,88 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const form = document.getElementById('registrationForm');
+// registration.js
+
+document.addEventListener('DOMContentLoaded', function () {
+    const registrationForm = document.getElementById('registrationForm');
     const passportInput = document.getElementById('passport');
     const fileChosen = document.getElementById('file-chosen');
 
-    // File upload name display
-    passportInput.addEventListener('change', function() {
-        if (this.files && this.files.length > 0) {
-            fileChosen.textContent = this.files[0].name;
-        } else {
-            fileChosen.textContent = 'No file chosen';
-        }
-    });
+    if (passportInput && fileChosen) {
+        passportInput.addEventListener('change', function () {
+            fileChosen.textContent = this.files && this.files.length > 0
+                ? this.files[0].name
+                : 'No file chosen';
+        });
+    }
 
-    // Form validation
-    form.addEventListener('submit', function(event) {
-        event.preventDefault();
+    if (registrationForm) {
+        registrationForm.addEventListener('submit', async function (event) {
+            event.preventDefault();
 
-        // Basic validation
-        const requiredFields = form.querySelectorAll('[required]');
-        let isValid = true;
+            const isValid = validateForm(this);
+            if (!isValid) {
+                alert("Please fill all required fields correctly.");
+                return;
+            }
 
-        requiredFields.forEach(field => {
-            if (!field.value.trim()) {
-                isValid = false;
-                field.style.borderColor = 'red';
-            } else {
-                field.style.borderColor = '#ddd';
+            const formData = new FormData(this);
+
+            try {
+                const response = await fetch('http://localhost:3000/api/register', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    alert('Registration submitted successfully!');
+                    this.reset();
+                    if (fileChosen) fileChosen.textContent = 'No file chosen';
+                } else {
+                    alert('Submission failed: ' + (result.error || 'Unknown error'));
+                }
+
+            } catch (err) {
+                console.error('Error submitting form:', err);
+                alert('An error occurred. Check the console for details.');
             }
         });
+    }
 
-        // Email validation
-        const emailField = document.getElementById('email');
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(emailField.value)) {
-            isValid = false;
-            emailField.style.borderColor = 'red';
-        }
+    // --- Validation logic ---
+    const validators = {
+        required: value => value.trim() !== '',
+        email: value => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value),
+        phone: value => /^\d{10}$/.test(value.replace(/\D/g, ''))
+    };
 
-        // Phone validation (basic)
-        const phoneField = document.getElementById('phone');
-        const phoneRegex = /^\d{10}$/; // Assumes 10-digit phone number
-        if (!phoneRegex.test(phoneField.value.replace(/\D/g, ''))) {
-            isValid = false;
-            phoneField.style.borderColor = 'red';
-        }
-
-        if (isValid) {
-            alert('Form submitted successfully!');
-            form.reset();
-            fileChosen.textContent = 'No file chosen';
-        } else {
-            alert('Please fill all required fields correctly.');
-        }
-    });
-});
-
-
-document.addEventListener('DOMContentLoaded', function() {
-    const form = document.getElementById('extendedRegistrationForm');
-
-    form.addEventListener('submit', function(event) {
-        event.preventDefault();
-
-        // Comprehensive form validation
-        const requiredFields = form.querySelectorAll('[required]');
+    function validateForm(form) {
         let isValid = true;
+        const requiredFields = form.querySelectorAll('[required]');
 
         requiredFields.forEach(field => {
-            // Reset previous error states
             field.style.borderColor = '#ddd';
-
-            if (!field.value.trim()) {
-                isValid = false;
+            if (!validators.required(field.value)) {
                 field.style.borderColor = 'red';
-            }
-        });
-
-        // Email validation
-        const emailFields = ['primaryEmail', 'alternateEmail'];
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-        emailFields.forEach(fieldId => {
-            const emailField = document.getElementById(fieldId);
-            if (emailField.value && !emailRegex.test(emailField.value)) {
                 isValid = false;
-                emailField.style.borderColor = 'red';
             }
         });
 
-        // Phone number validation
-        const phoneFields = ['primaryPhone', 'alternatePhone'];
-        const phoneRegex = /^\d{10}$/; 
-
-        phoneFields.forEach(fieldId => {
-            const phoneField = document.getElementById(fieldId);
-            if (phoneField.value && !phoneRegex.test(phoneField.value.replace(/\D/g, ''))) {
+        const emailFields = form.querySelectorAll('input[type="email"]');
+        emailFields.forEach(field => {
+            if (field.value && !validators.email(field.value)) {
+                field.style.borderColor = 'red';
                 isValid = false;
-                phoneField.style.borderColor = 'red';
             }
         });
 
-        if (isValid) {
-            // Collect form data
-            const formData = new FormData(form);
-            const formDataObject = Object.fromEntries(formData.entries());
+        const phoneFields = form.querySelectorAll('input[data-type="phone"]');
+        phoneFields.forEach(field => {
+            if (field.value && !validators.phone(field.value)) {
+                field.style.borderColor = 'red';
+                isValid = false;
+            }
+        });
 
-            console.log('Form Data:', formDataObject);
-            alert('Registration submitted successfully!');
-            form.reset();
-        } else {
-            alert('Please correct the highlighted fields.');
-        }
-    });
+        return isValid;
+    }
 });
-

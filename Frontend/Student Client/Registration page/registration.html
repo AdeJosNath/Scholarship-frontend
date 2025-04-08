@@ -18,13 +18,6 @@
         </header>
     <div class="registration-form">
         <div class="registration-container">
-            <form id="registrationForm">    
-                <div class="file-upload">
-                    <label for="passport" class="upload-btn">Choose File</label>
-                    <input type="file" id="passport" name="passport" accept=".jpg,.png" required>
-                    <span id="file-chosen">No file chosen</span>
-                </div>
-    
                 <div class="form-group">
                     <label for="name">Full Name</label>
                     <input type="text" id="name" name="name" required>
@@ -41,13 +34,16 @@
                 </div>
     
                 <div class="form-group">
-                    <label>Gender*</label>
+                    <label>Gender</label>
                     <div class="gender-group">
                         <label>
                             <input type="radio" name="gender" value="male" required> Male
                         </label>
                         <label>
                             <input type="radio" name="gender" value="female" required> Female
+                        </label>
+                        <label>
+                            <input type="radio" name="gender" value="other" required> other
                         </label>
                     </div>
                 </div>
@@ -69,6 +65,10 @@
 
                 <div class="form-section">
                     <h3>Location Information</h3>
+                    <div class="form-group">
+                        <label for="localGovArea">Address</label>
+                        <input type="text" id="localGovArea" name="localGovArea" required>
+                    </div>
                     <div class="form-row">
                         <div class="form-group">
                             <label for="localGovArea">Local Government Area</label>
@@ -87,7 +87,7 @@
                     </div>
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="religion">Religion*</label>
+                            <label for="religion">Religion</label>
                             <select id="religion" name="religion" required>
                                 <option value="">- Select -</option>
                                 <option value="religion1">Christianity</option>
@@ -121,7 +121,7 @@
                     </div>
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="primaryPhone">Primary Phone Number*</label>
+                            <label for="primaryPhone">Primary Phone Number</label>
                             <input type="tel" id="primaryPhone" name="primaryPhone" required>
                         </div>
                         <div class="form-group">
@@ -131,7 +131,7 @@
                     </div>
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="primaryEmail">Primary Email*</label>
+                            <label for="primaryEmail">Primary Email</label>
                             <input type="email" id="primaryEmail" name="primaryEmail" required>
                         </div>
                         <div class="form-group">
@@ -146,27 +146,26 @@
                     <h3>School Attended With Date</h3>
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="schoolName">Name of School*</label>
+                            <label for="schoolName">Name of School</label>
                             <input type="text" id="schoolName" name="schoolName" required>
                         </div>
                         <div class="form-group">
-                            <label for="schoolFrom">From*</label>
+                            <label for="schoolFrom">From</label>
                             <input type="text" id="schoolFrom" name="schoolFrom" required>
                         </div>
                         <div class="form-group">
-                            <label for="schoolTo">To*</label>
+                            <label for="schoolTo">To</label>
                             <input type="text" id="schoolTo" name="schoolTo" required>
                         </div>
                         <div class="form-group">
-                            <label for="qualification">Qualification*</label>
+                            <label for="qualification">Qualification</label>
                             <input type="text" id="qualification" name="qualification" required>
                         </div>
                     </div>
-                    <button type="button" id="addSchool" class="add-btn">Add</button>
                     
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="examName">Exam Name*</label>
+                            <label for="examName">Exam Name</label>
                             <select id="examName" name="examName" required>
                                 <option value="">--Select--</option>
                                 <option value="waec">WAEC</option>
@@ -175,7 +174,7 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="examDate">Exam Date*</label>
+                            <label for="examDate">Exam Date</label>
                             <input type="text" id="examDate" name="examDate" required>
                         </div>
                         <div class="form-group">
@@ -183,7 +182,7 @@
                             <input type="text" id="examNumber" name="examNumber" required>
                         </div>
                         <div class="form-group">
-                            <label for="document">Document*</label>
+                            <label for="document">Document</label>
                             <input type="file" id="document" name="document" class="file-input" required>
                             <div class="file-note">Please upload a pdf file only.</div>
                         </div>
@@ -191,7 +190,7 @@
                     
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="examName2">Exam Name (if you have two sittings)</label>
+                            <label for="examName2">Exam Name (2ndsittings)</label>
                             <select id="examName2" name="examName2">
                                 <option value="">--Select--</option>
                                 <option value="waec">WAEC</option>
@@ -200,15 +199,15 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="examDate2">Exam Date*</label>
+                            <label for="examDate2">Exam Date</label>
                             <input type="text" id="examDate2" name="examDate2">
                         </div>
                         <div class="form-group">
-                            <label for="examNumber2">Exam Number*</label>
+                            <label for="examNumber2">Exam Number</label>
                             <input type="text" id="examNumber2" name="examNumber2">
                         </div>
                         <div class="form-group">
-                            <label for="document2">Document*</label>
+                            <label for="document2">Document</label>
                             <input type="file" id="document2" name="document2" class="file-input">
                             <div class="file-note">Please upload a pdf file only.</div>
                         </div>
@@ -293,7 +292,7 @@
                 <div class="form-section">
                     <h3>Psychosocial Status</h3>
                     <div class="form-group">
-                        <label>Have you ever used or been addicted to hard drugs?*</label>
+                        <label>Have you ever used or been addicted to hard drugs?</label>
                         <div class="radio-group">
                             <label><input type="radio" name="drugUse" value="yes"> Yes</label>
                             <label><input type="radio" name="drugUse" value="no"> No</label>
@@ -312,7 +311,7 @@
                     </div>
                     
                     <div class="form-group">
-                        <label>Have you ever been a member of any secret or oath taking group or cult?*</label>
+                        <label>Have you ever been a member of any secret or oath taking group or cult?</label>
                         <div class="radio-group">
                             <label><input type="radio" name="cultMembership" value="yes"> Yes</label>
                             <label><input type="radio" name="cultMembership" value="no"> No</label>
@@ -329,7 +328,7 @@
                             <input type="text" id="cultPeriod" name="cultPeriod">
                         </div>
                         <div class="form-group">
-                            <label>Have you renounced your membership?*</label>
+                            <label>Have you renounced your membership?</label>
                             <div class="radio-group">
                                 <label><input type="radio" name="cultRenounce" value="yes"> Yes</label>
                                 <label><input type="radio" name="cultRenounce" value="no"> No</label>
@@ -347,7 +346,7 @@
                     <h3>Health Information</h3>
                     <div class="form-row">
                         <div class="form-group">
-                            <label>Do you have any health problem/allergies?*</label>
+                            <label>Do you have any health problem/allergies?</label>
                             <div class="radio-group">
                                 <label><input type="radio" name="healthIssues" value="yes"> Yes</label>
                                 <label><input type="radio" name="healthIssues" value="no"> No</label>
@@ -361,7 +360,7 @@
                     
                     <div class="form-row">
                         <div class="form-group">
-                            <label>Do you have any unhealthy or social problem?*</label>
+                            <label>Do you have any unhealthy or social problem?</label>
                             <div class="radio-group">
                                 <label><input type="radio" name="socialIssues" value="yes"> Yes</label>
                                 <label><input type="radio" name="socialIssues" value="no"> No</label>
@@ -378,7 +377,7 @@
                 <div class="form-section">
                     <h3>Information about Springtime Development Foundation Scholarship Scheme</h3>
                     <div class="form-group">
-                        <label for="scholarshipReferral">How did you come to know about Springtime Development Foundation Scholarship Scheme?*</label>
+                        <label for="scholarshipReferral">How did you come to know about Springtime Development Foundation Scholarship Scheme?</label>
                         <select id="scholarshipReferral" name="scholarshipReferral" required>
                             <option value="">--Select--</option>
                             <option value="friend">Friend</option>
@@ -390,7 +389,7 @@
                     </div>
                     
                     <div class="form-group">
-                        <label>Is this scholarship or award the only means by which you can pursue your education?*</label>
+                        <label>Is this scholarship or award the only means by which you can pursue your education?</label>
                         <div class="radio-group">
                             <label><input type="radio" name="onlyMeans" value="yes"> Yes</label>
                             <label><input type="radio" name="onlyMeans" value="no"> No</label>
@@ -399,7 +398,7 @@
                 </div>
                 
                 <!-- New Section: Application Letter -->
-                <div class="form-section">
+                <div class="letter">
                     <h3>Application Letter</h3>
                     <div class="form-group">
                         <label for="applicationLetter">Type your application letter (At least 100 characters)</label>
